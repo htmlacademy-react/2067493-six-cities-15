@@ -2,7 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
 
-const offersCount = 5;
+const offers = [
+  {
+    id: '1'
+  },
+  {
+    id: '2'
+  },
+  {
+    id: '3'
+  },
+  {
+    id: '4'
+  },
+  {
+    id: '5'
+  }
+];
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -10,6 +26,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App offersCount={offersCount} />
+    <App offers={offers} />
   </React.StrictMode>
 );
