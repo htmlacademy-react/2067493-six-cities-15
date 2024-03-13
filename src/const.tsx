@@ -16,6 +16,12 @@ export const offers = [
   }
 ];
 
+export enum Autorization {
+  Auth = 'AUTH',
+  NoAuth = 'NO_AUTH',
+  Unknown = 'UNKNOWN'
+}
+
 export enum AppRoute {
   MainPage = '/',
   FavoritesPage = '/favorites',
