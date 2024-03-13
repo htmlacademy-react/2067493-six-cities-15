@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { AppRoute } from '../const';
 
 function Page404() {
   return (
@@ -7,14 +8,14 @@ function Page404() {
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <Link className="header__logo-link header__logo-link--active" to='/'>
+              <Link className="header__logo-link header__logo-link--active" to={AppRoute.MainPage}>
                 <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
               </Link>
             </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
                 <li className="header__nav-item user">
-                  <Link className="header__nav-link header__nav-link--profile" to='/favorites'>
+                  <Link className="header__nav-link header__nav-link--profile" to={AppRoute.FavoritesPage}>
                     <div className="header__avatar-wrapper user__avatar-wrapper">
                     </div>
                     <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
@@ -22,7 +23,7 @@ function Page404() {
                   </Link>
                 </li>
                 <li className="header__nav-item">
-                  <Link className="header__nav-link" to='/login'>
+                  <Link className="header__nav-link" to={AppRoute.LoginPage}>
                     <span className="header__signout">Sign out</span>
                   </Link>
                 </li>
@@ -33,7 +34,7 @@ function Page404() {
       </header>
       <main>
         <h1 style={{textAlign: 'center' }}>Error 404. Page not found</h1>
-        <Link to='/'><h2 style={{textAlign: 'center', textDecoration: 'underline', color: 'blue'}}>Return to main page</h2></Link>
+        <Link to={AppRoute.MainPage}><h2 style={{textAlign: 'center', textDecoration: 'underline', color: 'blue'}}>Return to main page</h2></Link>
       </main>
     </div>
   );

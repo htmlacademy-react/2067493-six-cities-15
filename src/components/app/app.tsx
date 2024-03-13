@@ -4,6 +4,7 @@ import FavoritesPage from '../favorites-page/favorites-page';
 import OfferPage from '../offer-page/offer-page';
 import Page404 from '../../page404/page404';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 type offer = {
   id: string;
@@ -17,10 +18,10 @@ function App({ offers }: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<MainPage offers={offers}/>}/>
-        <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/favorites' element={<FavoritesPage/>}/>
-        <Route path='/offer'>
+        <Route path={AppRoute.MainPage} element={<MainPage offers={offers}/>}/>
+        <Route path={AppRoute.LoginPage} element={<LoginPage/>}/>
+        <Route path={AppRoute.FavoritesPage} element={<FavoritesPage/>}/>
+        <Route path={AppRoute.OfferPage}>
           <Route path=':id' element={<OfferPage offers={offers}/>}/>
         </Route>
         <Route path='*' element={<Page404/>}/>
